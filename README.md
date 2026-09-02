@@ -1,9 +1,10 @@
+
 # Agent Usage Widget
 
 A small iPhone home-screen widget showing remaining Codex and Claude Code
 usage, and when each resets.
 
-<!-- add a screenshot or two here -->
+<img width="1179" height="582" alt="agent-usage-status" src="https://github.com/user-attachments/assets/f5e16e7d-c142-40f5-bb5a-86ddc9142153" />
 
 Monochrome and minimal by design — bar length carries the signal, no
 colors, no clutter.
@@ -14,13 +15,6 @@ A local script checks Codex/Claude usage every 5 minutes and saves it to a
 JSON file. A small local server hands that file out over the internet
 (behind an API key), and a [Scriptable](https://scriptable.app) script on
 the phone fetches it and draws the widget.
-
-```
-agent_usage_status.py --> agent-usage-status.json --> serve.py --> tunnel --> iPhone
-  checks usage              just a file               serves it,   exposes    widget
-                                                        API-key      it
-                                                        gated
-```
 
 ## What's in here
 
