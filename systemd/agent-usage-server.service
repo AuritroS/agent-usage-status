@@ -1,0 +1,12 @@
+[Unit]
+Description=Serve agent-usage-status.json over localhost
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/agent-usage-widget/api-key.env
+Environment=PATH=%h/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=%h/agent-usage-widget/serve.py
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

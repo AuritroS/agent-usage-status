@@ -1,0 +1,7 @@
+[Unit]
+Description=Fetch Codex + Claude Code usage status
+
+[Service]
+Type=oneshot
+Environment=PATH=%h/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=%h/agent-usage-widget/agent_usage_status.py

@@ -1,0 +1,13 @@
+[Unit]
+Description=Cloudflare Tunnel for the agent usage widget
+After=agent-usage-server.service
+Wants=agent-usage-server.service
+
+[Service]
+Type=simple
+Environment=PATH=%h/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=%h/.local/bin/cloudflared tunnel run agent-usage-widget
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
